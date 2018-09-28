@@ -1,2 +1,0 @@
-# practice
-Created with CodeSandbox
