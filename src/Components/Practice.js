@@ -16,7 +16,6 @@ export default class Practice extends Component {
   }
 
   sendSteps = (steps) => {
-    console.log(steps)
     this.setState({ steps })
   }
 
@@ -25,6 +24,7 @@ export default class Practice extends Component {
       volume,
       steps
     } = this.state
+
     return (
       <div>
         <p>Volume: {volume}</p>

@@ -20,6 +20,14 @@ export default class Kid extends React.Component {
     })
   }
 
+  static getDerivedStateFromProps(props, state) {
+    console.log([...state.danceSteps, ...props.furtherSteps])
+    return {
+      danceSteps: [...state.danceSteps, ...props.furtherSteps],
+      startedPerforming: props.furtherSteps.length ? true: false
+    }
+  }
+
   componentDidMount() {
     this.setState({
       danceSteps: ['step1', 'step2']
@@ -42,6 +50,7 @@ export default class Kid extends React.Component {
           width: 50, 
           height: 50 }}></div>
         <div>Emotion: {emotion}</div>
+        {startedPerforming && <p>Performance Started</p>}
         {startedPerforming && <div>
           Current Step: {danceSteps[currentStepIndex]}
           <button onClick={() => this.setState({ currentStepIndex: currentStepIndex + 1 })}>
