@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 export default class Kid extends React.Component {
 
   constructor(props) {
@@ -21,7 +20,11 @@ export default class Kid extends React.Component {
     })
   }
 
-
+  componentDidMount() {
+    this.setState({
+      danceSteps: ['step1', 'step2']
+    })
+  }
 
   render() {
     const { dressColor } = this.props;
